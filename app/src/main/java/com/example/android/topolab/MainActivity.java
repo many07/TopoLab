@@ -1,6 +1,7 @@
 package com.example.android.topolab;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,6 +26,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         cotas = new ArrayList<>();
+        //This code is used to Underline the word "Cota Inicial" that in the view
+        TextView tCotaInicial = (TextView) findViewById(R.id.cot_init);
+        tCotaInicial.setPaintFlags(tCotaInicial.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        //This code is used to Underline the word "Cota Final" that in the view
+        TextView tCotaFinal = (TextView) findViewById(R.id.cota_final_text);
+        tCotaFinal.setPaintFlags(tCotaFinal.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        //This code is used to Underline the word "Cota Final" that in the view
+        TextView tXDistanciaDeCurva = (TextView) findViewById(R.id.x_distancia_de_curva_text);
+        tXDistanciaDeCurva.setPaintFlags(tXDistanciaDeCurva.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        //This code is used to Underline the word "Cota Final" that in the view
+        TextView tDistanciaEntreCotas = (TextView) findViewById(R.id.distancia_entre_cotas_text);
+        tDistanciaEntreCotas.setPaintFlags(tDistanciaEntreCotas.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
     }
     public void matar(View view){
         try{

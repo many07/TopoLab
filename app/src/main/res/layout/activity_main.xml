@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,92 +8,115 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.topolab.MainActivity"
-    android:orientation="vertical">
+    tools:context="com.example.android.topolab.MainActivity">
 
 
-    <LinearLayout
-        android:layout_weight="2"
-        android:layout_height="0dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="8dp">
+        android:layout_height="wrap_content">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cota Inicial (m): "
-                android:textSize="16dp"
-                android:id="@+id/cot_init"/>
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:id="@+id/cota_inicial"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cota Final (m): "
-                android:textSize="16dp"/>
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/cota_final"/>
-        </LinearLayout>
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="0dp"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:layout_alignParentTop="true">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="xDistancia de Curva(cm): "
-                android:textSize="16dp"/>
-            <EditText
-                android:layout_width="0dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cota Inicial (m): "
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:id="@+id/cot_init"
+                    android:padding="16dp"
+                    android:background="@color/colorPrimary"
+                    android:textColor="#FFFFFF"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:id="@+id/cota_inicial"
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/x_distancia_de_curva"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="0dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cota_final_text"
+                    android:layout_width="0dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cota Final (m): "
+                    android:textSize="16dp"
+                    android:padding="16dp"
+                    android:background="@color/colorPrimary"
+                    android:textColor="#FFFFFF"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/cota_final"
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Distancia entre Cotas(m): "
-                android:textSize="16dp"/>
-            <EditText
-                android:layout_width="0dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:id="@+id/x_distancia_de_curva_text"
+                    android:text="xDistancia de Curva(cm): "
+                    android:textSize="16dp"
+                    android:padding="16dp"
+                    android:background="@color/colorPrimary"
+                    android:textColor="#FFFFFF"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/x_distancia_de_curva"
+                    android:inputType="number"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/distancia_entre_cotas"/>
-        </LinearLayout>
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:text="Distancia entre Cotas(m): "
+                    android:id="@+id/distancia_entre_cotas_text"
+                    android:textSize="16dp"
+                    android:padding="16dp"
+                    android:background="@color/colorPrimary"
+                    android:textColor="#FFFFFF"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/distancia_entre_cotas"
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,4 +127,4 @@
 
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>
